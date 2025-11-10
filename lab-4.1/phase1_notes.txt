@@ -1,0 +1,23 @@
+Q1: i got status code 200
+Q2: apache/2.4.7 (ubuntu)
+Q3: <!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Go ahead and ScanMe!</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2A0D45">
+<link rel="preload" as="image" href="/images/sitelogo.png" imagesizes="168px" imagesrcset="/images/sitelogo.png, /images/sitelogo-2x.png 2x">
+<link rel="preload" as="image" href="/shared/images/nst-icons.svg">
+<link rel="stylesheet" href="/shared/css/nst.css?v=2">
+<script async src="/shared/js/nst.js?v=2"></script>
+Q4: the title is Go ahead and ScanMe!
+Q5: <form class="nst-search" id="nst-head-search" action="/search/">
+<form class="nst-search" id="nst-foot-search" action="/search/">
+Q6: $  cd /workspaces/Lab-4 ; /usr/bin/env /home/codespace/.python/current/bin/python /home/codespace/.vscode-remote/extensions/ms-python.debugpy-2025.14.1-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 36575 -- /workspaces/Lab-4/lab-4.1/E1.py 
+Status: 200
+Final URL: http://scanme.nmap.org/
+Server header: Apache/2.4.7 (Ubuntu)
+Content-Type: text/html
+First 200 chars of body:\n <!DOCTYPE html>\n<html lang="en">\n<head>\n<title>Go ahead and ScanMe!</title>\n<meta name="viewport" content="width=device-width,initial-scale=1">\n<meta name="theme-color" content="#2A0D45">\n<link rel="p
+Q7: yes they had the same status and sever header
+Q8:?
