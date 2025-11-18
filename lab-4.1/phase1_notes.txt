@@ -20,4 +20,5 @@ Server header: Apache/2.4.7 (Ubuntu)
 Content-Type: text/html
 First 200 chars of body:\n <!DOCTYPE html>\n<html lang="en">\n<head>\n<title>Go ahead and ScanMe!</title>\n<meta name="viewport" content="width=device-width,initial-scale=1">\n<meta name="theme-color" content="#2A0D45">\n<link rel="p
 Q7: yes they had the same status and sever header
-Q8:?
+Q8: Status and Server header did NOT change. Both responses returned HTTP 200 and the `Server header was `gunicorn/19.9.0`. The `Content-Length` did change (177 vs 172) because `https://httpbin.org/headers` echoes back the request headers in the JSON body — different `User-Agent` strings change the length of that JSON response.
+Q9: Interpretation: a change in `Content-Length` alone usually means the response body content changed (for example, the echoed `User-Agent`) and does not by itself indicate a security block. If the status code or `Server` header had changed (for example a 403, 301, or a different server/edge), that could indicate server-side filtering, a WAF, CDN routing, or blocking based on `User-Agent`. In this test we observed no blocking or defensive behavior.
