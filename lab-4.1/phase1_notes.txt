@@ -21,3 +21,13 @@ Content-Type: text/html
 First 200 chars of body:\n <!DOCTYPE html>\n<html lang="en">\n<head>\n<title>Go ahead and ScanMe!</title>\n<meta name="viewport" content="width=device-width,initial-scale=1">\n<meta name="theme-color" content="#2A0D45">\n<link rel="p
 Q7: yes they had the same status and sever header
 Q8:?
+Q8: No — the status and Server header stayed the same. Both responses were HTTP 200 and showed Server: gunicorn/19.9.0`. Only the Content Length changed (177 vs 172) because httpbin sends back the headers you give it, so different User-Agent values change the response size.
+
+Q9: This change in Content Length just means the response body was different (it echoed the User-Agent). That does not mean the server blocked us. If the status code or Server header had changed (for example to 403), that could mean the site is filtering or blocking some User-Agents.
+
+Recon summary:
+- Server header — shows the web server software and version (helps an attacker look for known bugs).
+- Status changes when switching User-Agent — if the status changes (e.g., 200 → 403), it may mean filtering or blocking is in place.
+- Echoed User-Agent / Content Length — shows the server reads and reflects headers; this can leak information about how requests are handled.
+- Quick defensive tip: remove or hide Server/X-Powered-By headers (or use a reverse proxy that normalizes headers) and make responses consistent for different User-Agent values.
+
