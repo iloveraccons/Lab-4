@@ -1,7 +1,41 @@
-import requests
-r = requests.get("http://scanme.nmap.org", timeout=5)
-print("Status:", r.status_code)
-print("Final URL:", r.url)
-print("Server header:", r.headers.get("Server"))
-print("Content-Type:", r.headers.get("Content-Type"))
-print("First 200 chars of body:\\n", r.text[:200].replace('\n','\\n'))
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   177  100   177    0     0    249      0 --:--:-- --:--:-- --:--:--   249
+HTTP/2 200 
+date: Tue, 18 Nov 2025 12:14:44 GMT
+content-type: application/json
+content-length: 177
+server: gunicorn/19.9.0
+access-control-allow-origin: *
+access-control-allow-credentials: true
+
+{
+  "headers": {
+    "Accept": "*/*", 
+    "Host": "httpbin.org", 
+    "User-Agent": "MyTestAgent/1.0", 
+    "X-Amzn-Trace-Id": "Root=1-691c6334-01765ad81433e03f594a04ec"
+  }
+}
+
+--- RESPONSE SEPARATOR ---
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   172  100   172    0     0    472      0 --:--:-- --:--:-- --:--:--   472
+HTTP/2 200 
+date: Tue, 18 Nov 2025 12:14:45 GMT
+content-type: application/json
+content-length: 172
+server: gunicorn/19.9.0
+access-control-allow-origin: *
+access-control-allow-credentials: true
+
+{
+  "headers": {
+    "Accept": "*/*", 
+    "Host": "httpbin.org", 
+    "User-Agent": "curl/8.5.0", 
+    "X-Amzn-Trace-Id": "Root=1-691c6335-79db288c4441a3c060b44a04"
+  }
+}
