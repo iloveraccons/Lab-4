@@ -1,1 +1,72 @@
 start of phase 2
+Task 2.1 basic GET with requests
+1. create file lab4-1_get.py
+excercises 
+1. Run from the terminal commandline python3 lab4-1_get.py http://scanme.nmap.org
+results:#[+] URL: http://scanme.nmap.org
+    Status Code: 200
+    Final URL:   http://scanme.nmap.org/
+    Content-Type: text/html
+    Server:       Apache/2.4.7 (Ubuntu)
+    Content-Length: 2068 
+
+2. Run against each lab URL. Observe status codes (200 / 301 / 404 / 500). [http://scanme.nmap.org, http://example.com, http://httpbin.org]
+
+results: [+] URL: http://scanme.nmap.org
+    Status Code: 200
+    Final URL:   http://scanme.nmap.org/
+    Content-Type: text/html
+    Server:       Apache/2.4.7 (Ubuntu)
+    Content-Length: 2068
+[+] URL: http://example.com
+    Status Code: 200
+    Final URL:   http://example.com/
+    Content-Type: text/html
+    Server:       N/A
+    Content-Length: 363
+[+] URL: http://httpbin.org
+    Status Code: 503
+    Final URL:   http://httpbin.org/
+    Content-Type: text/html
+    Server:       awselb/2.0
+    Content-Length: 162
+
+3. Try http and https version of each domain, and not any differences
+
+results: [+] URL: http://scanme.nmap.org
+    Status Code: 200
+    Final URL:   http://scanme.nmap.org/
+    Content-Type: text/html
+    Server:       Apache/2.4.7 (Ubuntu)
+    Content-Length: 2068
+[+] URL: http://example.com
+    Status Code: 200
+    Final URL:   http://example.com/
+    Content-Type: text/html
+    Server:       N/A
+    Content-Length: 513
+[+] URL: http://httpbin.org
+    Status Code: 503
+    Final URL:   http://httpbin.org/
+    Content-Type: text/html
+    Server:       awselb/2.0
+    Content-Length: 162
+[!] Request error for https://scanme.nmap.org: HTTPSConnectionPool(host='scanme.nmap.org', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x76cf3d586060>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+[+] URL: https://example.com
+    Status Code: 200
+    Final URL:   https://example.com/
+    Content-Type: text/html
+    Server:       N/A
+    Content-Length: 363
+[+] URL: https://httpbin.org
+    Status Code: 503
+    Final URL:   https://httpbin.org/
+    Content-Type: text/html
+    Server:       awselb/2.0
+    Content-Length: 162
+
+3. Try non-existent paths (/thispagedoesnotexist) and note the behavior
+
+results: [!] Request error for http://thispagedoesntexist: HTTPConnectionPool(host='thispagedoesntexist', port=80): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7442f701e630>: Failed to resolve 'thispagedoesntexist' ([Errno -2] Name or service not known)"))
+
+Task 2.2 collecting headers across many pages

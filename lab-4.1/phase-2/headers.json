@@ -1,0 +1,50 @@
+[
+  {
+    "url": "http://scanme.nmap.org",
+    "status": 200,
+    "final_url": "http://scanme.nmap.org/",
+    "server": "Apache/2.4.7 (Ubuntu)",
+    "content_type": "text/html",
+    "content_length": "2068"
+  },
+  {
+    "url": "https://scanme.nmap.org",
+    "error": "HTTPSConnectionPool(host='scanme.nmap.org', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x731989e00ec0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"
+  },
+  {
+    "url": "http://example.com",
+    "status": 200,
+    "final_url": "http://example.com/",
+    "server": null,
+    "content_type": "text/html",
+    "content_length": "363"
+  },
+  {
+    "url": "https://example.com",
+    "status": 200,
+    "final_url": "https://example.com/",
+    "server": null,
+    "content_type": "text/html",
+    "content_length": "363"
+  },
+  {
+    "url": "http://httpbin.org",
+    "error": "HTTPConnectionPool(host='httpbin.org', port=80): Read timed out. (read timeout=5)"
+  },
+  {
+    "url": "https://httpbin.org",
+    "status": 200,
+    "final_url": "https://httpbin.org/",
+    "server": "gunicorn/19.9.0",
+    "content_type": "text/html; charset=utf-8",
+    "content_length": "9593"
+  },
+  {
+    "url": "-o",
+    "error": "Invalid URL '-o': No scheme supplied. Perhaps you meant https://-o?"
+  },
+  {
+    "url": "headers.json",
+    "error": "Invalid URL 'headers.json': No scheme supplied. Perhaps you meant https://headers.json?"
+  }
+]
